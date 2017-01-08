@@ -1,0 +1,12 @@
+{
+    "id": "nl.chrisboer.ipcam",
+    "name": {
+        "en": "ipcam"
+    },
+    "version": "0.0.1",
+    "compatibility": "0.x || 1.x",
+    "author": {
+        "name": "Chris Boer",
+        "email": "chrisboer@pointit.nl"
+    }
+}
