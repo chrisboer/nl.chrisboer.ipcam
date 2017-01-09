@@ -90,8 +90,7 @@
       "pair": [
         {
           "id": "configure_ipcam"
-        }
-        ,
+        },
         {
           "id": "add_ipcam",
           "template": "add_devices"
@@ -133,40 +132,28 @@
     "small":"./assets/images/small.png"
   },
   "flow":	{
-    "triggers":[
+    "triggers":
+	[
       {
-        "id":"ipcam_go_left",
+        "id": "ipcam_go_left",
         "title": {
           "en":"Ipcam goes left",          
           "nl":"Ipcam gaat naar links"
         },
-        "args": [
-          {
-            "name": "ipcam",
-            "type": "device",
-            "filter": "driver_uri=homey:app:nl.chrisboer.ipcam&driver_id=ipcam",
-            "placeholder": { 
-              "en": "Which ipcam device", 
-              "nl": "Welke ipcam apparaat" 
-             }
-          }
-        ],
         "tokens":[
           {
-            "name":"number",
+            "name":"go_left",
+			"type": "number"
             "title": {
               "en":"Amount #",
               "nl":"Aantal #"
             },
-            "example":{
-              "en":"Amount 2",
-			  "nl":"Aantal 2"
-            }
-          }
-        ]
-      },
+            "example": 2
+		  }
+      	]
+	  }	
 	],
-    "actions":[
+     "actions":[
       {
         "id": "ipcam_go_left",
         "title": {
@@ -176,7 +163,7 @@
 		"fluidArgs": true,
         "args":[
           {
-            "name": "number",
+            "name": "go_left",
             "type": "device",
             "filter": "driver_uri=homey:app:nl.chrisboer.ipcam&driver_id=ipcam"
           }
@@ -191,14 +178,14 @@
         "fluidArgs": true,
         "args":[
           {
-            "name": "number",
+            "name": "restart",
             "type": "device",
             "filter": "driver_uri=homey:app:nl.chrisboer.ipcam&driver_id=ipcam"
           }
         ]
       }  
     ]
-   },
+},
   "permissions": [
     "homey:manager:speech-output",
     "homey:manager:speech-input",
