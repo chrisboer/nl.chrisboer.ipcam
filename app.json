@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 {
-    "id": "nl.pointit.ipcam",
+    "id": "nl.chrisboer.ipcam",
 	"version": "0.0.1",
 	"compatibility": ">=0.9 || 1.x",
 	"category": [
@@ -8,9 +7,9 @@
 	],
 	  "author": {
     "name": "Chris Boer",
-    "email": chrisboer@pointit.nl",
+    "email": chrisboer@chrisboer.nl",
     "website": "https://linkedin.com/in/chrisboer"
-  },
+	},
     "name": {
         "en": "Ipcam flow and control",
         "nl": "Ipcam flows en beheer"
@@ -23,7 +22,7 @@
 		"homey:manager:speech-output",
 		"homey:manager:speech-input",
 		"homey:manager:ledring"
-],
+	],
 	
 "speech": [
     {
@@ -75,6 +74,7 @@
       }
     }
 ],
+
   "drivers": [
     {
       "id": "ipcam",
@@ -137,14 +137,14 @@
       {
         "id":"ipcam_go_left",
         "title": {
-          "en":"Ipcam to go left",          
-          "nl":"Ipcam naar links"
+          "en":"Ipcam goes left",          
+          "nl":"Ipcam gaat naar links"
         },
         "args": [
           {
             "name": "ipcam",
             "type": "device",
-            "filter": "driver_uri=homey:app:nl.pointit.ipcam&driver_id=ipcam",
+            "filter": "driver_uri=homey:app:nl.chrisboer.ipcam&driver_id=ipcam",
             "placeholder": { 
               "en": "Which ipcam device", 
               "nl": "Welke ipcam apparaat" 
@@ -153,254 +153,19 @@
         ],
         "tokens":[
           {
-            "number":"number",
+            "name":"number",
             "title": {
-              "en":"howmuch to the left",
-              "nl":"hoeveel naar links"
+              "en":"Amount #",
+              "nl":"Aantal #"
             },
             "example":{
-              "en":"2",
-              "nl":"2"
+              "en":"Amount 2",
+			  "nl":"Aantal 2"
             }
           }
         ]
       },
-      {
-        "id":"ipcam_restart",
-        "title": {
-          "en":"Ipcam is going to reboot",
-          "nl": "Ipcam wordt herstart"
-        },
-        "args": [
-          {
-            "name": "ipcam",
-            "type": "device",
-            "filter": "driver_uri=homey:app:nl.pointit.ipcam&driver_id=ipcam"
-          }
-        ]
-      }
-    ],
-    "actions":[
-      {
-        "id": "ipcam_go_left",
-        "title": {
-			"en":"Ipcam to go left",          
-			"nl":"Ipcam naar links"
-        },
-        "fluidArgs": true,
-        "args":[
-          {
-            "name": "ipcam",
-            "type": "device",
-            "filter": "driver_uri=homey:app:nl.pointit.ipcam&driver_id=ipcam"
-          }
-		  ],
-      },
-      {
-        "id": "ipcam_restart",
-        "title": {
-          "en" : "Reboot Ipcam",
-          "nl" : "Herstart Ipcam"
-        },
-        "fluidArgs": true,
-        "args":[
-          {
-            "name": "ipcam",
-            "type": "device",
-            "filter": "driver_uri=homey:app:nl.pointit.ipcam&driver_id=ipcam"
-          }
-        ]
-      }  
-        ]
-      },
-  "permissions": [
-    "homey:manager:speech-output",
-    "homey:manager:speech-input",
-    "homey:manager:ledring"
-  ]
-}
-=======
-{
-    "id": "nl.pointit.ipcam",
-	"version": "0.0.1",
-	"compatibility": ">=0.9 || 1.x",
-	"category": [
-      "video"
 	],
-	  "author": {
-    "name": "Chris Boer",
-    "email": chrisboer@pointit.nl",
-    "website": "https://linkedin.com/in/chrisboer"
-  },
-    "name": {
-        "en": "Ipcam flow and control",
-        "nl": "Ipcam flows en beheer"
-    },
-    "description": {
-        "en": "This is an Ipcam app for control with Homey",
-        "nl": "Dit is an Ipcam app voor controle binnen Homey"
-    },
-    "permissions": [
-		"homey:manager:speech-output",
-		"homey:manager:speech-input",
-		"homey:manager:ledring"
-],
-	
-"speech": [
-    {
-     "id": "ipcam_go_left",
-     "importance": 0.7,
-      "triggers": {
-        "en" : ["go left"],
-		"nl" : ["ga naar links"]
-      }
-    },
-	{
-      "id": "ipcam_go_right",
-      "importance": 0.7,
-      "triggers" : {
-        "en" : ["go right"],
-        "nl" : ["ga naar links"]
-      }
-    },
-    {
-      "id": "ipcam_go_up",
-      "importance": 0.8,
-      "triggers" : {
-        "en" : ["go up"],
-        "nl" : ["ga naar boven", "ga omhoog"]
-      }
-    },
-    {
-      "id": "ipcam_go_down",
-      "importance": 0.8,
-      "triggers" : {
-        "en" : ["go down"],
-        "nl": ["ga naar beneden", "ga omlaag"]
-      }
-    },
-    {
-      "id": "ipcam_snapshot",
-      "importance": 1,
-      "triggers" : {
-        "en" : ["take snapshot", "snapshot"],
-        "nl" : ["neem foto", "neem snapshot"]
-      }
-    },
-    {
-      "id": "ipcam_restart",
-      "importance": 1,
-      "triggers" : {
-        "en" : ["restart cam", "reboot cam"],
-        "nl": ["herstart cam", "reboot cam"]
-      }
-    }
-],
-  "drivers": [
-    {
-      "id": "ipcam",
-      "name": {
-        "en": "ipcam"
-      },
-      "images": {
-        "large": "./drivers/ipcam/assets/images/large.png",
-        "small": "./drivers/ipcam/assets/images/small.png"
-      },
-      "class": "other",
-      "capabilities": [ ],
-      "pair": [
-        {
-          "id": "configure_ipcam"
-        }
-        ,
-        {
-          "id": "add_ipcam",
-          "template": "add_devices"
-        }
-      ],
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "Ipcam settings",
-            "nl": "Ipcam instellingen"
-          },
-          "children": [
-            {
-              "id": "host",
-              "type": "text",
-              "value":"0.0.0.0",
-              "label": {
-                "en": "(Local) IP Address of Ipcam",
-                "nl": "(Lokale) IP adres van Ipcam"
-              }
-            },
-            {
-              "id": "tcpport",
-              "type": "text",
-              "value":"80",
-              "label": {
-                "en": "TCP Port",
-                "nl": "TCP Poort"
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "images":{
-    "large":"./assets/images/large.png",
-    "small":"./assets/images/small.png"
-  },
-  "flow":	{
-    "triggers":[
-      {
-        "id":"ipcam_go_left",
-        "title": {
-          "en":"Ipcam to go left",          
-          "nl":"Ipcam naar links"
-        },
-        "args": [
-          {
-            "name": "ipcam",
-            "type": "device",
-            "filter": "driver_uri=homey:app:nl.pointit.ipcam&driver_id=ipcam",
-            "placeholder": { 
-              "en": "Which ipcam device", 
-              "nl": "Welke ipcam apparaat" 
-             }
-          }
-        ],
-        "tokens":[
-          {
-            "number":"number",
-            "title": {
-              "en":"howmuch to the left",
-              "nl":"hoeveel naar links"
-            },
-            "example":{
-              "en":"2",
-              "nl":"2"
-            }
-          }
-        ]
-      },
-      {
-        "id":"ipcam_restart",
-        "title": {
-          "en":"Ipcam is going to reboot",
-          "nl": "Ipcam wordt herstart"
-        },
-        "args": [
-          {
-            "name": "ipcam",
-            "type": "device",
-            "filter": "driver_uri=homey:app:nl.pointit.ipcam&driver_id=ipcam"
-          }
-        ]
-      }
-    ],
     "actions":[
       {
         "id": "ipcam_go_left",
@@ -408,12 +173,12 @@
 			"en":"Ipcam to go left",          
 			"nl":"Ipcam naar links"
         },
-        "fluidArgs": true,
+		"fluidArgs": true,
         "args":[
           {
-            "name": "ipcam",
+            "name": "number",
             "type": "device",
-            "filter": "driver_uri=homey:app:nl.pointit.ipcam&driver_id=ipcam"
+            "filter": "driver_uri=homey:app:nl.chrisboer.ipcam&driver_id=ipcam"
           }
 		  ],
       },
@@ -426,18 +191,17 @@
         "fluidArgs": true,
         "args":[
           {
-            "name": "ipcam",
+            "name": "number",
             "type": "device",
-            "filter": "driver_uri=homey:app:nl.pointit.ipcam&driver_id=ipcam"
+            "filter": "driver_uri=homey:app:nl.chrisboer.ipcam&driver_id=ipcam"
           }
         ]
       }  
-        ]
-      },
+    ]
+   },
   "permissions": [
     "homey:manager:speech-output",
     "homey:manager:speech-input",
     "homey:manager:ledring"
   ]
 }
->>>>>>> origin/master
